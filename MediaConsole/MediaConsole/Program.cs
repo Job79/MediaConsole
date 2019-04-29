@@ -132,8 +132,6 @@ namespace MediaConsole
                     new Size(Console.WindowWidth, Console.WindowHeight * 2)://Black/white.
                     new Size(Console.WindowWidth - 1, Console.WindowHeight);//With colors.
 
-                int colorQuality = (minQuality + maxQuality) / 2;
-
                 //Variables used to calculate fps.
                 double framesCounter = 0;
                 var st = new Stopwatch();
