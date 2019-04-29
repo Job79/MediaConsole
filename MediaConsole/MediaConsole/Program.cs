@@ -72,7 +72,6 @@ namespace MediaConsole
             else
                 PrintImage(args[0], colors, pixels);
 
-            Console.ReadLine();
             Console.Clear();
         }
 
@@ -88,22 +87,35 @@ namespace MediaConsole
             {
                 ImagePrinter printer = new ImagePrinter(colors);
 
+                /*                          Resize window.                          */
                 if (colors)
                 {
                     Size maxSize = printer.GetMaxSize(image.Width, image.Height, MaxWidth, MaxHeight * 2);
-
                     Console.SetWindowSize(maxSize.Width, maxSize.Height / 2);//Set window to the right size.
-                    StringBuilder consoleImage = printer.CreateImage(image, maxSize, minColorDifference);//Create image with max quality.
-                    Console.Write(consoleImage);//Print image to console.
                 }
                 else
                 {
                     Size maxSize = printer.GetMaxSize(image.Width, image.Height / 2, MaxWidth - 1, MaxHeight);
-
                     Console.SetWindowSize(maxSize.Width + 1, maxSize.Height);//Set window to the right size.
-                    StringBuilder consoleImage = printer.CreateBlackWhiteImage(image, maxSize, pixels);//Create image.
-                    Console.Write(consoleImage);//Print image to console.
                 }
+
+                /*                          Print image.                            */
+                do
+                {
+                    Console.Clear();
+                    Console.CursorVisible = false;
+
+                    if (colors)
+                    {
+                        StringBuilder consoleImage = printer.CreateImage(image, new Size(Console.WindowWidth,Console.WindowHeight * 2), minColorDifference);//Create image with max quality.
+                        Console.Write(consoleImage);//Print image to console.
+                    }
+                    else
+                    {
+                        StringBuilder consoleImage = printer.CreateBlackWhiteImage(image, new Size(Console.WindowWidth - 1, Console.WindowHeight), pixels);//Create image.
+                        Console.Write(consoleImage);//Print image to console.
+                    }
+                } while (Console.ReadKey().KeyChar != 'c');
             }
         }
 
@@ -129,10 +141,8 @@ namespace MediaConsole
 
                 int colorDifference = (int)(maxColorDifference * 0.25d);//75%
                 Size videoSize = colors ?
-                    new Size(Console.WindowWidth, Console.WindowHeight * 2)://Black/white.
+                    new Size(Console.WindowWidth, Console.WindowHeight * 2) ://Black/white.
                     new Size(Console.WindowWidth - 1, Console.WindowHeight);//With colors.
-
-                int colorQuality = (minQuality + maxQuality) / 2;
 
                 //Variables used to calculate fps.
                 double framesCounter = 0;
@@ -148,9 +158,9 @@ namespace MediaConsole
                         if (colors)//Also show and calculate colorQuality.
                         {
                             if (fps < 10 && colorDifference < maxColorDifference)//Decrease quality.
-                                colorDifference+=2;
+                                colorDifference += 2;
                             else if (fps > 20 && colorDifference > minColorDifference)//Increase quality.
-                                colorDifference-=2;
+                                colorDifference -= 2;
 
                             double colorQualityPercentage = 100d / (minColorDifference - maxColorDifference) * (colorDifference - maxColorDifference);//Calculate colorQualityPercentage.
                             Console.Title = $"{Math.Round(fps, 1)}fps  Color quality: {Math.Round(colorQualityPercentage, 1)}%";
