@@ -1,27 +1,24 @@
 # MediaConsole
 Convert pictures and videos to text and displays them in the console.\
 This is just for fun.\
-Change the font size of the console for better results.
+Change the font size & console size(videos) of the console for better results.
 
-Usage: ```MediaConsole.exe {path to image} Colors:[on|off] Background:[dark|white] ["Pixels"]```\
+Usage: ```MediaConsole.exe {path to image/video} Colors:[on|off] Background:[dark|white] [Pixels]```\
 Example colors: ```MediaConsole.exe "C:\picture 2.jpg" on```\
-Example black/white: ```MediaConsole.exe "C:\picture 2.jpg" off white "#$* "```\
+Example black/white: ```MediaConsole.exe "C:\picture 2.mp4" off white "#$* "```
+Background and pixels doesn't work with colors.
+The default pixels are: "██▓▓▒░  "
 
-Example video (click for orginal):
-
+Example video (click for orginal):\
 [![gif2](README/gif2.gif)](https://www.youtube.com/watch?v=vq2jYFZVMDA)
-
-Black/White video (click for orginal):
-
+Black/White video (click for orginal):\
 [![gif1](README/gif1.gif)](https://www.youtube.com/watch?v=w3jLJU7DT5E)
 
-Example pictures:
-
+Example pictures:\
 ![picture1](README/picture1.jpg)
 ![picture2](README/picture2.jpg)
 
-Black/White picture:
-
+Black/White picture:\
 ![picture3](README/picture3.jpg)
 
 
