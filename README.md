@@ -1,7 +1,7 @@
 # MediaConsole
 Convert pictures and videos to text and displays them in the console.\
 This is just for fun.\
-Change the font size & console size(videos) of the console for better results.
+Change the font size & console size(videos) for better results.
 Download here: https://github.com/GHenkje/MediaConsole/releases
 
 Usage: ```MediaConsole.exe {path to image/video} Colors:[on|off] Background:[dark|white] [Pixels]```\
