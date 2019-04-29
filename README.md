@@ -11,6 +11,7 @@ The default pixels are: "██▓▓▒░  "
 
 Example video (click for orginal):\
 [![gif2](README/gif2.gif)](https://www.youtube.com/watch?v=vq2jYFZVMDA)
+
 Black/White video (click for orginal):\
 [![gif1](README/gif1.gif)](https://www.youtube.com/watch?v=w3jLJU7DT5E)
 
