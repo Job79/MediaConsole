@@ -120,7 +120,7 @@ namespace MediaConsole
         }
 
         /// <summary>
-        /// Play an video file in the console.
+        /// Play an video file inside the console.
         /// </summary>
         /// <param name="filePath">Path to the video</param>
         /// <param name="colors">off = black/white frames</param>
@@ -149,7 +149,7 @@ namespace MediaConsole
                 var st = new Stopwatch();
                 st.Start();
 
-                for (long frame = 0; frame < videoReader.FrameCount; frame++, framesCounter++)
+                for (int frame = 0; frame < videoReader.FrameCount; frame++, framesCounter++)
                 {
                     if (st.ElapsedMilliseconds >= 500)//Update fps every 0, 5 second.
                     {
@@ -180,6 +180,22 @@ namespace MediaConsole
                             width = Console.WindowWidth;
                             height = Console.WindowHeight;
                         }
+                       
+                        if (Console.KeyAvailable)//When any key is pressed.
+                        {
+                            switch (Console.ReadKey(true).Key)
+                            {
+                                case ConsoleKey.RightArrow:
+                                    frame += (int)videoReader.FrameRate.Value * 5;//Skip 5 sec.
+                                    break;
+                                case ConsoleKey.LeftArrow:
+                                    frame -= (int)videoReader.FrameRate.Value * 5;//Go back 5 sec.
+                                    break;
+                                case ConsoleKey.C:
+                                    return;
+                            }
+
+                        }
 
                         framesCounter = 0;
                         st.Restart();
@@ -188,12 +204,12 @@ namespace MediaConsole
                     //Display frame.
                     if (colors)
                     {
-                        StringBuilder consolImage = printer.CreateImage(videoReader.ReadVideoFrame(), videoSize, colorDifference);//Create image.
+                        StringBuilder consolImage = printer.CreateImage(videoReader.ReadVideoFrame(frame), videoSize, colorDifference);//Create image.
                         Console.Write(consolImage);//Display image.
                     }
                     else
                     {
-                        StringBuilder consoleImage = printer.CreateBlackWhiteImage(videoReader.ReadVideoFrame(), videoSize, pixels);//Create image.
+                        StringBuilder consoleImage = printer.CreateBlackWhiteImage(videoReader.ReadVideoFrame(frame), videoSize, pixels);//Create image.
                         Console.Write(consoleImage);//Display image.
                     }
 
