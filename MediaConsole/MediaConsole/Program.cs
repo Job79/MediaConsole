@@ -34,7 +34,7 @@ namespace MediaConsole
             /*                          Process args.                           */
             if (args.Length <= 0 || !File.Exists(args[0]))//Check file.
             {
-                Console.WriteLine("Usage: path to application {path to image/video} Colors:[on|off] Background:[dark|white] [Pixels]");
+                Console.WriteLine("Usage: MediaConsole.exe {path to image/video} Colors:[on|off] Background:[dark|white] [Pixels]");
                 return;
             }
 
