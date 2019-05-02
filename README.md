@@ -1,25 +1,34 @@
-# MediaConsole
-Convert pictures and videos to text and displays them in the console.\
-Change the font size & console size for better results.\
-Download here: https://github.com/GHenkje/MediaConsole/releases
+```
+####     ####                ##  ##             ######                                     ##
+####     ####                ##               ###                                          ##
+## ##   #####  #######  #######  ##  ####### ###        #######  ######## ######  #######  ##   ######
+##  ## ## ### ######## ##    ##  ##   ###### ###       ##    ### ###   ##  ####  ##    ### ##  ########
+##   ###  ###  ##      ###   ##  ##  ##  ###  ###      ###   ### ###   ##     ## ###   ##  ##  ##
+##   ##   ###   #####   #### ##  ##   ### ##    ######   #####   ###   ## #####    #####   ##    #####
+```
+<p align="center">
+<img src="https://img.shields.io/badge/License-GPLv3-blue.svg">
+<img src="https://img.shields.io/badge/version-1.3-blue.svg">
+<br/>
+<br/>
+<a>Display images and play videos in an console window.<a/>
+</p>
 
-Usage: ```MediaConsole.exe {path to image/video} Colors:[on|off] Background:[dark|white] [Pixels]```\
-Example colors: ```MediaConsole.exe "C:\picture 2.jpg" on```\
-Example black/white: ```MediaConsole.exe "C:\picture 2.mp4" off white "#$* "```\
-Background and pixels doesn't work with colors enabled.\
-The default pixels are: "██▓▓▒░  "
+<p align="center">
+<img src="README/gif2.gif">
+</p>
 
-Example video (click for orginal):\
-[![gif2](README/gif2.gif)](https://www.youtube.com/watch?v=vq2jYFZVMDA)
+<details><summary>Click to see more examples</summary>
+  <p align="center">
+    <img src="README/gif1.gif">
+    <img src="README/picture1.jpg">
+    <img src="README/picture2.jpg">
+    <img src="README/picture3.jpg">
+  <p align="center">
+</details>
 
-Black/White video (click for orginal):\
-[![gif1](README/gif1.gif)](https://www.youtube.com/watch?v=w3jLJU7DT5E)
-
-Example pictures:\
-![picture1](README/picture1.jpg)
-![picture2](README/picture2.jpg)
-
-Black/White picture:\
-![picture3](README/picture3.jpg)
-
-
+# Usage
+Download releases [here.](https://github.com/GHenkje/MediaConsole/releases)\
+Usage:\
+`MediaConsole.exe {path to image/video} Colors:[*on*|off] Background:[*dark*|white] ["pixels" *"██▓▓▒░  "*]`\
+The path to the image/video is required, the others are optional.
