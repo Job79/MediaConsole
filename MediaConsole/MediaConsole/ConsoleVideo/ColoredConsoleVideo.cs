@@ -40,7 +40,7 @@ namespace MediaConsole
                                 frameIndex -= (int)videoReader.FrameRate.Value * 5;//Go back 5 sec.
                                 break;
                             case ConsoleKey.UpArrow://Increase quality.
-                                if (colorDifference - 2 > maxColorDifference)
+                                if (colorDifference > maxColorDifference)
                                     colorDifference -= 2;
                                 break;
                             case ConsoleKey.DownArrow://Decrease quality.
