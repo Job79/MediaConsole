@@ -7,15 +7,15 @@
 ##   ##   ###   #####   #### ##  ##   ### ##    ######   #####   ###   ## #####    #####   ##    #####
 ```
 <p align="center">
-<img src="https://img.shields.io/badge/License-GPLv3-blue.svg">
-<img src="https://img.shields.io/badge/version-1.3-blue.svg">
-<br/>
-<br/>
-<a>Display images and play videos in an console window.<a/>
+  <img src="https://img.shields.io/badge/License-GPLv3-blue.svg">
+  <img src="https://img.shields.io/badge/version-1.3-blue.svg">
+  <br/>
+  <br/>
+  <a>Display images and play videos in a console window.<a/>
 </p>
 
 <p align="center">
-<img src="README/gif2.gif">
+  <img src="README/gif2.gif">
 </p>
 
 <details><summary>Click to see more examples</summary>
