@@ -69,7 +69,7 @@ namespace MediaConsole
 
                         currentTop = top;
                     }
-                    else if (colorsEqual(bottom, currentTop, maxColorDifference))//Switch bottom and top, and change top.
+                    else if (colorsEqual(bottom, currentTop, maxColorDifference))//Switch bottom and top, and change bottom.
                     {
                         builder.Append("\x1b[48;2;");
                         builder.Append(bottom.R);
@@ -81,7 +81,7 @@ namespace MediaConsole
 
                         currentBottom = bottom;
                     }
-                    else if (colorsEqual(top, currentBottom, maxColorDifference))//Switch bottom and top, and change bottom.
+                    else if (colorsEqual(top, currentBottom, maxColorDifference))//Switch bottom and top, and change top.
                     {
                         builder.Append("\x1b[38;2;");
                         builder.Append(top.R);
