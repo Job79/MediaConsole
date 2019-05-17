@@ -39,7 +39,9 @@ namespace MediaConsole
                                 frameIndex -= (int)videoReader.FrameRate.Value * 5;//Go back 5 sec.
                                 break;
                             case ConsoleKey.Spacebar:
-                                while (Console.ReadKey().Key != ConsoleKey.Spacebar) { }//Wait until space is pressed again.
+                                st.Stop();
+                                while (Console.ReadKey(true).Key != ConsoleKey.Spacebar) { }//Wait until space is pressed again.
+                                st.Start();
                                 break;
                             case ConsoleKey.C://Exit.
                                 return;
