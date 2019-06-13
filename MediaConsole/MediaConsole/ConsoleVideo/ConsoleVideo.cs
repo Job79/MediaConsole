@@ -69,7 +69,8 @@ namespace MediaConsole
                     }
 
                     /*                          Display frame.                          */
-                    using (Bitmap frame = new Bitmap(videoReader.ReadVideoFrame(frameIndex), videoSize))
+                    using (var plainFrame = videoReader.ReadVideoFrame(frameIndex))
+                        using (Bitmap frame = new Bitmap(plainFrame, videoSize))
                         Console.Write(consoleImage.Create(frame, pixels));
 
                     Console.SetCursorPosition(0, 0);

@@ -8,7 +8,7 @@
 ```
 <p align="center">
   <img src="https://img.shields.io/badge/License-GPLv3-blue.svg">
-  <img src="https://img.shields.io/badge/version-1.3.3-blue.svg">
+  <img src="https://img.shields.io/badge/version-1.3.4-blue.svg">
   <br/>
   <br/>
   <a>Display images and play videos in a console window.<a/>
